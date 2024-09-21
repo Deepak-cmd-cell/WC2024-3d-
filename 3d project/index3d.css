@@ -1,0 +1,218 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-5deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-5deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+.banner .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(cup.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 110%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+        color: rgb(118, 246, 106);
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+        
+    }
+}
+.onbench h2{
+    color: rgb(169, 12, 200);
+    filter: brightness(1);
+    border: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    text-align: center;
+    font-size: 40px;
+
+
+
+}
+.onbench img{
+    align-items:center;
+    display: flex;
+    text-align: center;
+    width: 20%;
+    height: 20%;
+    filter: brightness(.5);
+    transition: .5s;
+    overflow: hidden;
+    position: relative;
+    max-width: unset;
+
+}
+
+.onbench img:hover{
+    filter: brightness(1);
+    height: 30%;
+    width: 30%;
+    padding: 20px;
+}
+#coach img{
+    align-items:center;
+    display: flex;
+    text-align: center;
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+    filter: brightness(.5);
+    transition: .5s;
+    
+   
+}
+#coach img:hover{
+    filter: brightness(1);
+    height: 30%;
+    width: 30%;
+        padding: 20px;
+   
+}
+.coach h3{
+    color: rgb(169, 12, 200);
+    filter: brightness(1);
+    border: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    text-align: center;
+    font-size: 40px;
+    border: #000;
+}
+.coach h3:hover{
+    color: rgb(203, 228, 203);
+    font-size: 50px;
+    transition: .5s;
+
+    
+}
+.onbench h2:hover{
+    color: rgb(203, 228, 203);
+    font-size: 50px;
+    transition: .5s;
+}
+.banner .content .author:hover{
+    color: aqua;
+    
+
+}
+
+
+
+
+
